@@ -21,7 +21,7 @@ def home():
             print(output_path + " deleted")
 
         posts = [post[1] for post in request.form.items()]
-        links = posts[0].splitlines()
+        links = list(filter(None, [x.strip() for x in posts[0].splitlines()]))
 
         template = request.files["template"]
         template.save(template_path)
