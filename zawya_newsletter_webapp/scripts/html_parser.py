@@ -23,12 +23,10 @@ class Parser():
         href = headline
         # if element does not exist, program throws a TypeError
         img_href = "" if soup.find("meta", {"property":"og:image"}) is None else self.normalize_img_href(soup.find("meta", {"property":"og:image"})["content"], "zlarge")
-        title = json.loads(soup.find("script", {"type":"application/ld+json"}).contents[0])["itemListElement"][2]["item"]["name"] if soup.find("meta", {"property":"og:title"}) is None else soup.find("meta", {"property":"og:title"})["content"]
-        subtitle = re.search('"dimension5":"(.*)","dimension3":"', soup.find("script", {"type":"text/javascript"}).contents[0]).group(1) if soup.find("meta", {"name":"description"}) is None else soup.find("meta", {"name":"description"})["content"]
-        print(href)
-        print(img_href)
-        print(title)
-        print(subtitle)
+        #title = json.loads(soup.find("script", {"type":"application/ld+json"}).contents[0])["itemListElement"][2]["item"]["name"]
+        title = "test title" if soup.find("meta", {"property":"og:title"}) is None else soup.find("meta", {"property":"og:title"})["content"]
+        #subtitle = re.search('"dimension5":"(.*)","dimension3":"', soup.find("script", {"type":"text/javascript"}).contents[0]).group(1) if soup.find("meta", {"name":"description"}) is None else soup.find("meta", {"name":"description"})["content"]
+        subtitle = "test subtitle" if soup.find("meta", {"name":"description"}) is None else soup.find("meta", {"name":"description"})["content"]
         return (href, img_href, title, subtitle)
 
     def generate_elements_dict(self):
