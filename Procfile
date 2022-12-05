@@ -1,1 +1,1 @@
-heroku ps:scale web=1
+web: gunicorn zawya_newsletter_webapp:app
