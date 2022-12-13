@@ -17,10 +17,12 @@ class Parser():
         return re.sub(pattern, size, href)
 
     def parse_headline(self, headline):
+
         # request website
         page = requests.get(headline)
         soup = BeautifulSoup(page.text, "lxml")
         href = headline
+
         # if element does not exist, program throws a TypeError
         img_href = "" if soup.find("meta", {"property":"og:image"}) is None else self.normalize_img_href(soup.find("meta", {"property":"og:image"})["content"], "zlarge")
 
