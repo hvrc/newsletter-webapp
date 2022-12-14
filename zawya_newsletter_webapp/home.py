@@ -11,7 +11,6 @@ output_path = "zawya_newsletter_webapp/templates/output.html"
 @app.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
-
         if os.path.exists(template_path):
             os.remove(template_path)
             print(template_path + " deleted")
@@ -51,3 +50,7 @@ def output():
     return render_template(
         "output.html",
     )
+
+@app.route("/test", methods=["POST", "GET"])
+def test():
+    return "Hello World!"

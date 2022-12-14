@@ -26,13 +26,13 @@ class Parser():
         # if element does not exist, program throws a TypeError
         img_href = "" if soup.find("meta", {"property":"og:image"}) is None else self.normalize_img_href(soup.find("meta", {"property":"og:image"})["content"], "zlarge")
 
-        # title = json.loads(soup.find("script", {"type":"application/ld+json"}).contents[0])["itemListElement"][2]["item"]["name"] if soup.find("meta", {"property":"og:title"}) is None else soup.find("meta", {"property":"og:title"})["content"]
+        title = json.loads(soup.find("script", {"type":"application/ld+json"}).contents[0])["itemListElement"][2]["item"]["name"] if soup.find("meta", {"property":"og:title"}) is None else soup.find("meta", {"property":"og:title"})["content"]
 
-        title = str(soup.find("h1", {"class":"article-title"})).replace("h1", "p")
+        # title = str(soup.find("h1", {"class":"article-title"})).replace("h1", "p")
 
-        # subtitle = re.search('"dimension5":"(.*)","dimension3":"', soup.find("script", {"type":"text/javascript"}).contents[0]).group(1) if soup.find("meta", {"name":"description"}) is None else soup.find("meta", {"name":"description"})["content"]
+        subtitle = re.search('"dimension5":"(.*)","dimension3":"', soup.find("script", {"type":"text/javascript"}).contents[0]).group(1) if soup.find("meta", {"name":"description"}) is None else soup.find("meta", {"name":"description"})["content"]
 
-        subtitle = soup.find("div", {"class":"article-lead"})
+        # subtitle = soup.find("div", {"class":"article-lead"})
 
         return (href, img_href, title, subtitle)
 
