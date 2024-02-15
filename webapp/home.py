@@ -1,14 +1,14 @@
-from zawya_newsletter_webapp import app
-from zawya_newsletter_webapp.scripts.html_parser import *
+from webapp import app
+from webapp.scripts.html_parser import *
 from flask import render_template, request, redirect, url_for
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
 template_dir = root_dir + "/templates/"
 template_name = "template.html"
 template_path = template_dir + template_name
-output_path = "zawya_newsletter_webapp/templates/output.html"
+output_path = "webapp/templates/output.html"
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/newsletter-app/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
         if os.path.exists(template_path):
@@ -31,7 +31,7 @@ def home():
 
         return render_template(
             "home.html",
-            parsed=True,
+            parsed=True
         )
 
     return render_template(
@@ -39,18 +39,23 @@ def home():
         parsed=False
     )
 
-@app.route("/template", methods=["POST", "GET"])
+@app.route("/newsletter-app/template/", methods=["POST", "GET"])
 def template():
     return render_template(
         "template.html",
     )
 
-@app.route("/output", methods=["POST", "GET"])
+@app.route("/newsletter-app/output/", methods=["POST", "GET"])
 def output():
     return render_template(
         "output.html",
     )
 
-@app.route("/test", methods=["POST", "GET"])
+@app.route("/newsletter-app/test/", methods=["POST", "GET"])
 def test():
     return "Hello World!"
+
+"""
+if __name__ == "__main__":
+    app.run(debug=True)
+"""

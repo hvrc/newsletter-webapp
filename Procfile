@@ -1,1 +1,1 @@
-web: gunicorn zawya_newsletter_webapp:app
+web: gunicorn webapp:app

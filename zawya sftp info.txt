@@ -1,0 +1,17 @@
+zawya.husainhk.com
+new-kent.dreamhost.com
+dh_4vkatu
+tFcG^w8J
+w-97HVgd
+
+ssh dh_4vkatu@zawya.husainhk.com
+~ you have to manually type in password, you can't copy paste
+touch zawya.husainhk.com/tmp/restart.txt ~ this is to just refresh the server
+
+use filezilla to upload files to server from a mac
+after making updates, recreating the venv through the ssh command line client is needed
+not sure how python is installed on the server, maybe you did it initally
+
+virtualenv venv
+. venv/bin/activate
+python -m venv venv

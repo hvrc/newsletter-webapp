@@ -8,4 +8,3 @@ to run the web app locally...
 5. press submit and wait for the program to process the links and create the output file
 6. an output button should appear which when clicked, opens a new tab with the output file displayed
 7. to save this file, you will have to right click > save as (webpage, html) > save
-

@@ -4,5 +4,5 @@ if sys.executable != INTERP:
         os.execl(INTERP, INTERP, *sys.argv)
 sys.path.append(os.getcwd())
 
-sys.path.append('zawya_newsletter_webapp')
-from zawya_newsletter_webapp import app as application
+sys.path.append('webapp')
+from webapp import app as application
