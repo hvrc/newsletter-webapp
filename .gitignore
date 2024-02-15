@@ -9,5 +9,4 @@ venv/
 *.pyc
 
 sftp_info.txt
-main_templates
 ~todo.txt
