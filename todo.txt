@@ -1,6 +1,6 @@
-webapp folder is needed
-an app needs to be mentioned in the procfile
-relative imports are a nightmare
+want to remove the webapp 'app' folder
+an 'app' needs to be mentioned in the procfile, for it to work on dream host
+relative imports start giving errors without the 'app' structure
 
-~ can you find a way to get rid of the webapp/ folder though?
-write scripts to automate repetative tasks
+find a way to get rid of the webapp folder
+write scripts to automate repetative tasks for uploading to server
